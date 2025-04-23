@@ -1,0 +1,8 @@
+name: 667Hardcore
+version: '0.0.1'
+main: me.jortvlaming.hardcore.Hardcore
+api-version: '1.21'
+prefix: HC
+load: STARTUP
+authors: [ JortVlaming ]
+website: jortvlaming.github.io
