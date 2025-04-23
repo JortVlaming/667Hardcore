@@ -1,5 +1,6 @@
 package me.jortvlaming.hardcore;
 
+import me.jortvlaming.hardcore.data.PlayerDataManager;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -7,7 +8,7 @@ import java.io.File;
 import java.io.IOException;
 
 public final class Hardcore extends JavaPlugin {
-    static Hardcore instance;
+    public static Hardcore instance;
 
     public File dataFile;
     public YamlConfiguration data;
@@ -41,11 +42,14 @@ public final class Hardcore extends JavaPlugin {
         data = YamlConfiguration.loadConfiguration(dataFile);
 
         saveDefaultConfig();
+
+        new Listeners(this);
     }
 
     @Override
     public void onDisable() {
         // Plugin shutdown logic
+        PlayerDataManager.shutdown();
         try {
             data.save(dataFile);
         } catch (IOException e) {
