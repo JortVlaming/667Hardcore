@@ -52,6 +52,15 @@
 
     <repositories>
         <repository>
+            <id>crystal-releases</id>
+            <name>Crystalcoding repository</name>
+            <url>https://repo.crystalcoding.duckdns.org/releases</url>
+        </repository>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+        <repository>
             <id>spigotmc-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
@@ -67,6 +76,17 @@
             <artifactId>spigot-api</artifactId>
             <version>1.21.4-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.crystalcoding</groupId>
+            <artifactId>api</artifactId>
+            <version>0.0.6.4</version>
+            <classifier>mapped</classifier>
+        </dependency>
+        <dependency>
+            <groupId>com.github.eduardomcb</groupId>
+            <artifactId>discord-webhook</artifactId>
+            <version>1.0.0</version>
         </dependency>
     </dependencies>
 </project>
