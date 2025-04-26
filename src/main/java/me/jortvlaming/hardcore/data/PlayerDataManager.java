@@ -4,6 +4,7 @@ import me.jortvlaming.hardcore.Hardcore;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.HashMap;
 import java.util.Map;
@@ -48,9 +49,14 @@ public class PlayerDataManager {
         return nameCache.getOrDefault(s.toLowerCase(), null);
     }
 
-    @Nullable
+    @Nonnull
     public static PlayerData getPlayerData(UUID uuid) {
         return playerData.getOrDefault(uuid, loadPlayerData(uuid));
+    }
+
+    @Nonnull
+    public static PlayerData getPlayerData(Player player) {
+        return getPlayerData(player.getUniqueId());
     }
 
     @Nullable
